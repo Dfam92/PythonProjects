@@ -4,7 +4,7 @@ def linhas(a):
     print(f'\33[32m{(len(a)+4)*"-"}')
     print('',"\033[7;31m",a,"\033[m" )
     print(f'\33[32m{(len(a)+4) * "-"}\33[m')
-    """O texto escrito ficara entre sublinhado e soblinhado alem de ter uma coloracao avermelhada ao fundo"""
+    """The Text will be underlined and  with red background"""
 
 
 listj = []
@@ -12,11 +12,11 @@ listpc = []
 try:
     linhas('Seek And Destroy')
     for c in range(1,4):
-        a = int(input(f'Escolha o {c}° numero de 1 a 10 para jogar!!!\n'))
+        a = int(input(f'Choose the {c}° number between 1 and 10 for play!!!\n'))
         sleep(0.1)
         if 0 < a < 11:
             listj.append(a)
-            print('Adicionado')
+            print('Added')
             print()
         else:
             a = x
@@ -27,43 +27,43 @@ try:
         listpc.append(b)
     print(listpc)
     while True:
-        print(f'Voce tem {len(listj)} Vidas')
+        print(f'You Have {len(listj)} Lifes')
         print()
         print(listj)
-        t = int(input('Digite um numero\n'))
+        t = int(input('Play one number\n'))
         sleep(0.5)
         print()
         if t in listpc:
             listpc.remove(t)
-            print(f'Voce acertou o PC! Agora ele tem {len(listpc)} vidas')
+            print(f'You Hitted the PC! Now he have {len(listpc)} lives')
             sleep(0.5)
             print()
         if len(listpc) == 0:
-            print('Voce Derrotou o temido computador, Grande Jogo!')
+            print('You defeated the dreaded Computer, Well Played!')
             sleep(0.5)
             print()
             break
-        print(f'O PC esta com {len(listpc)} vidas')
+        print(f'The PC still have {len(listpc)} lives')
         print()
         print(listpc)
         sleep(0.5)
         p = randint(1,10)
-        print(f'O PC escolheu {p}')
+        print(f'The PC played {p}')
         sleep(0.5)
         print()
         if p in listj:
             listj.remove(p)
-            print(f'O PC te acertou, agora voce tem {len(listj)} vidas')
+            print(f'You are Hitted By PC, Now you have {len(listj)} lifes')
             sleep(0.5)
             print()
         if len(listj) == 0:
-            print('Voce derrotou o temido PC parabens')
+            print('You were defeated By The Evil PC, try again and beat him!')
             sleep(0.5)
             print()
             break
 except ValueError:
-    print('Voce digitou algo estranho, abra o jogos novamente!')
+    print('Something strange Happen, please Try Again!')
 except NameError:
-    print('Voce digitou um numero invalido, abra o jogos novamente!')
+    print('You Played a wrong number,  please open the game again!')
 finally:
-    print('Bom jogo!')
+    print('Good Game!')
